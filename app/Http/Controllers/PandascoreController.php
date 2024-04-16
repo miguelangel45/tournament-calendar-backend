@@ -21,7 +21,7 @@ class PandascoreController extends Controller
             'Authorization' => 'Bearer '.env('PANDASCORE_API_KEY')
         ])->withQueryParameters([
             'pagination' => $pagination
-        ])->get(env('PANDASCORE_API_BASE_ROUTE')."{game}"."/tournaments");
+        ])->get(env('PANDASCORE_API_BASE_ROUTE').$game."/tournaments");
 
         return JsonResponse::fromJsonString($tournaments);
         //return JsonResponse::fromJsonString((string) $route);
